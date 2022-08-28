@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="tecnico.css" type="text/css" />
+
+<title>Pagina inicial</title>
+</head>
+<body>
+			<% String usuario = ""; %>
+
+    <div id="all">
+        <h1>Bienvenido tecnico <%= usuario %></h1>
+
+<%@ page import= "Tickets/GestionApp.java" %>
+
+		
+			<div class="grid">
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Consultar incidencias asiganas no resueltas</h2>
+      				 <% gestionApp.incidenciasAsignadasNoResueltas(gestionApp.buscaTecnico(usuario)); %>
+   				 </div>
+        	
+        	
+        	
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Marcar incidencia como resuelta</h2>
+    				 <input type="text" placeholder="solucion" name="solucion">
+    				 <input type="text" placeholder="id de la incidencia" name="idIncidencia">
+      				 <% gestionApp.cierraIncidencia(request.getParameter("idIncidencia"), request.getParameter("solucion")); %>
+   				 </div>
+        	
+        	
+        	
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Consultar mis incidencias cerradas</h2>
+      				 <% gestionApp.incidenciasCerradas(gestionApp.buscaTecnico(usuario)) %>
+   				 </div>
+        	
+        	
+        	
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Mostrar mi perfil</h2>
+      				 <button><a href="#">Ir</a></button>
+   				 </div>
+        	
+        	
+        	
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Cambiar clave</h2>
+      				 <button><a href="#">Ir</a></button>
+   				 </div>
+        	
+        	
+   				 <div class="grid-item">
+    				 <h2 class="grid-item-title">Cerrar sesion</h2>
+      				 <button><a href="#">Ir</a></button>
+   				 </div>
+        	</div>
+		
+
+
+</body>
+</html>

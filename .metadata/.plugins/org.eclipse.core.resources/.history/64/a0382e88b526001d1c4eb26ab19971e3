@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="login.css" type="text/css" />
+<title>Pagina inicial</title>
+</head>
+<body>
+
+
+<%@ page import= "./Tickets/GestionApp.java" %>
+
+        <div id="ini">
+            <h1>FernanTickect</h1>
+            <form action="" method="get">
+                <h2 id="titulo"> Iniciar Sesion </h2>
+                <hr>
+                <br><br>
+                <br><br>
+                <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario">
+                <br><br>
+                <br><br>
+                <input type="password" name="contrasena" id="contrasena" placeholder="Contrasena">
+                <br><br>
+                <input type="submit" value="Iniciar Sesion">
+                <br><br>
+            </form>
+        </div>
+
+
+
+</body>
+</html>
+
+
+
+<%
+
+GestionApp gestionApp = new GestionApp();
+
+gestionApp.insertaAdmin("a","a","a","a");
+//gestionApp.insertaUsuario("u","u","u","u");
+//gestionApp.insertaTecnico("t","t","t","t");
+
+gestionApp.cargarDatos();
+
+    if(request.getParameter("nombreUsuario") != null && request.getParameter("contrasena") != null){
+        String nombreUsuario = request.getParameter("nombreUsuario");
+        String contrasena = request.getParameter("contrasena");
+
+        if (gestionApp.login(nombreUsuario, contrasena)==0) response.sendRedirect("admin.jsp");
+        if (gestionApp.login(nombreUsuario,contrasena)==1) response.sendRedirect("usuario.jsp");
+        if (gestionApp.login(nombreUsuario,contrasena)==2) response.sendRedirect("tecnico.jsp");
+    }
+%>

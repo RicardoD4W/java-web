@@ -1,0 +1,162 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Administracion del sistema</title>
+<link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+
+<div class="plans">
+    <div class="plan">
+      <h2 class="plan-title">Consultar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"> </p>
+      <ul class="plan-features">
+        <li>Incidencias
+       <strong>abiertas por
+        usuarios</strong></li>
+      </ul>
+      <% gestionApp.buscaTodasLasInciddenciasAbiertas(); %>
+    </div>
+
+
+
+
+    <div class="plan">
+      <h2 class="plan-title">Consultar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li>Incidencias <strong>cerradas por usuarios</strong></li>
+      </ul>
+      <% gestionApp.incidenciasCerradasResueltas(); %><
+    </div>
+
+
+
+
+
+    <div class="plan">
+      <h2 class="plan-title">Consultar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li> <strong>Incidencias por termino</strong> </li>
+      </ul>
+      <% gestionApp.buscaIncidenciaByTerm(termino); %>
+    </div>
+
+
+
+
+
+ <div class="plan">
+      <h2 class="plan-title">Consultar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li>Los <strong> tecnicos</strong></li>
+      </ul>
+      <% gestionApp.getTecnicos();%>
+    </div>
+
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Asignar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li>Incidencia <strong> a un tecnico</strong></li>
+      </ul>
+      <% gestionApp.asignaIncidenciaaTecnico(gestionApp.buscaIncidencia(idIncidencia), gestionApp.buscaTecnico(idTecnico)); %>
+    </div>
+
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Dar de alta</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li> <strong> A un tecnico</strong></li>
+      </ul>
+      <%registrarmeTécnico();/*String nombre, String apel, String clave, String mail*/
+      nombre = cad.nextLine(); apel = cad.nextLine(); clave = cad.nextLine(); mail = cad.nextLine();
+      gestionApp.insertaTecnico(nombre, apel, clave, mail);
+
+      //###########log##########
+      try {
+          BufferedWriter bw = new BufferedWriter(new FileWriter("log.dat"));
+          texto += "[Técnico dado de alta" + nombre +" - "+ LocalDate.now() + "]"+"\n";
+          bw.write(texto);
+          bw.close();
+      } catch (IOException e) {
+          System.out.println("");
+      } %>
+    </div>
+
+
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Borrar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li> <strong> A un tecnico</strong></li>
+      </ul>
+      <% gestionApp.borrarTecnico(id); %>
+    </div>
+
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Consultar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li> <strong> Los usuarios</strong></li>
+      </ul>
+      <% gestionApp.getUsuarios(); %>
+    </div>
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Estadisticas</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li><strong> De la aplicacion</strong></li>
+      </ul>
+      <a href="#" class="plan-button">Ir</a>
+    </div>
+
+
+
+
+
+     <div class="plan">
+      <h2 class="plan-title">Cerrar</h2>
+      <p class="plan-price"><img src="https://cutt.ly/8LGRT6D"></p>
+      <ul class="plan-features">
+        <li><strong>Sesion</strong></li>
+      </ul>
+      <a href="#" class="plan-button">Ir</a>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>
+
+<%
+
+
+%>

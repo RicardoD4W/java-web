@@ -1,0 +1,12 @@
+127.0.0.1 - - [03/Aug/2022:12:16:59 +0200] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:06 +0200] "GET /java-web-jsp/ HTTP/1.1" 200 827
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:06 +0200] "GET /java-web-jsp/login.css HTTP/1.1" 200 1158
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:07 +0200] "GET /favicon.ico HTTP/1.1" 404 698
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:11 +0200] "GET /java-web-jsp/?nombreUsuario=admin+admin&contrasena= HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:11 +0200] "GET /java-web-jsp/index.jsp HTTP/1.1" 200 827
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:14 +0200] "GET /java-web-jsp/index.jsp?nombreUsuario=adin&contrasena=admin HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:14 +0200] "GET /java-web-jsp/index.jsp HTTP/1.1" 200 827
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:18 +0200] "GET /java-web-jsp/index.jsp?nombreUsuario=admin&contrasena=admin HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:18 +0200] "GET /java-web-jsp/admin.jsp HTTP/1.1" 200 3256
+0:0:0:0:0:0:0:1 - - [03/Aug/2022:12:17:18 +0200] "GET /java-web-jsp/admin.css HTTP/1.1" 200 3605
+127.0.0.1 - - [03/Aug/2022:12:20:58 +0200] "GET / HTTP/1.1" 404 687
